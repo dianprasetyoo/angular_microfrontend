@@ -1,0 +1,84 @@
+$border-radius: 4px;
+
+@mixin with-border($radius: $border-radius, $border-color: black) {
+  border: 1px solid $border-color;
+  border-radius: $radius;
+}
+
+.my-graph-component {
+  @include with-border($border-radius, blue);
+
+  filter: drop-shadow(2px 4px 6px black);
+  background-color: #1eb4d1;
+  border: 1px solid #198aa2;
+  display: inline-block;
+  user-select: none;
+  padding: 20px;
+  margin-top: 10;
+  margin-bottom: 10pt;
+
+  .header-text {
+    margin-top: 10;
+    margin-bottom: 10pt;
+  }
+
+  .comp-props {
+    color: white;
+    text-align: center;
+    margin-bottom: 10pt;
+
+    .increase-button {
+      @include with-border($border-radius, #3e3e3e);
+      background-color: white;
+      padding: 4px 6px;
+      cursor: pointer;
+      color: black;
+      margin-left: 5pt;
+      margin-right: 5pt;
+
+      &:hover {
+        filter: drop-shadow(2px 4px 6px black);
+      }
+    }
+
+    .btn {
+      background-color: white;
+      padding: 4px 6px;
+      cursor: pointer;
+      color: black;
+      margin-left: 5pt;
+      margin-right: 5pt;
+    }
+    .btn:hover {
+      filter: drop-shadow(2px 4px 6px black);
+    }
+
+  }
+
+  .comp-state {
+    color: yellow;
+    margin-top: 20px;
+  }
+
+  .header {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 40px;
+  }
+
+  .container {
+    padding-bottom: 1%;
+    max-width: 95%;
+  }
+
+  .textInput {
+    bottom: 0;
+    line-height: 30px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+
+}
